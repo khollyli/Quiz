@@ -69,8 +69,21 @@
                         <fieldset class="question" name="html-question-one">
                             <legend>The legend element represents a caption for the content of its parent fieldset element</legend>
                             <ul class="answers-list">
-                                <li></li>
-                                <li></li>
+                                <li>
+                                    <!-- Although not required for 'label' elements with a nested 'input',
+                                    it is still best-practice to explicitly link a 'label' with its
+                                    corresponding 'input' element. -->
+                                    <label for="q1-a1">
+                                        <input type="radio" id="q1-a1" name="q1" value="True"  />
+                                        True
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="q1-a2">
+                                        <input type="radio" id="q1-a2" name="q1" value="False" />
+                                        False
+                                    </label>
+                                </li>
                             </ul>
                         </fieldset>
                     </div>
@@ -79,15 +92,46 @@
                         <fieldset class="question" name="html-question-two">
                             <legend>A label element nesting an input element is required to have a for attribute with the same value as the input's id</legend>
                             <ul class="answers-list">
-                                <li></li>
-                                <li></li>
+                                <li>
+                                    <label for="q2-a1">
+                                        <input type="radio" id="q2-a1" name="q2" value="True" />
+                                        True
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="q2-a2">
+                                        <input type="radio" id="q2-a2" name="q2" value="False" />
+                                        False
+                                    </label>
+                                </li>
                             </ul>
                         </fieldset>
                     </div>
                 </section>
                 <section role="region" aria-labelledby="css-questions">
                     <h2 id="css-questions">CSS</h2>
+                    <div class="formrow">
+                        <div class="question-block">
+                            <!-- Link the this 'label' element to the 'select' element,
+                            and give the 'select' element a 'name' attribute. -->
+                            <label for="customer">Are you a frontend developer?</label>
+                        </div>
+                        <div class="answer">
+                            <select name="customer" id="customer" required>
+                                <option value="">Select an option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="question-block">
+                            <label for="css-questions">Do you have any questions:</label>
+                        </div>
+                        <div class="answer">
+                            <textarea id="css-questions" name="css-questions" rows="5" cols="24" placeholder="Who is flexbox..."></textarea>
+                        </div>
+                    </div>
                 </section>
+                <button type="submit">Send</button>
             </form>
         </main>
     </body>

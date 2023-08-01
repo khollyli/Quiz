@@ -27,7 +27,7 @@ header {
     the viewport width. */
     width: max(100px, 18vw);
     background-color: #0a0a23;
-    aspect-ratio: 35 / 4;
+    
     padding: 0.4rem;
 }
 
@@ -59,6 +59,12 @@ h1, h2 {
 
 h2 {
     border-bottom: 4px solid #dfdfe2;
+}
+
+/* To prevent unnecessary repetition, target the 'before' pseudo-element
+of the 'p' element, and give it a 'content' property of '"Question #"'. */
+p::before {
+    content: "Question #";
 }
 
 .sr-only {
