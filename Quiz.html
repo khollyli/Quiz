@@ -24,19 +24,71 @@
                 <!-- Unordered list -->
                 <ul>
                     <li>
-                        <a>INFO</a>
+                        <!-- The 'a' is an anchor element. -->
+                        <a href="#student-info">INFO</a>
                     </li>
                     <li>
-                        <a>HTML</a>
+                        <a href="#html-questions">HTML</a>
                     </li>
                     <li>
-                        <a>CSS</a>
+                        <a href="#css-questions">CSS</a>
                     </li>
                 </ul>
             </nav>
         </header>
         <main>
-
+            <form action="https://freecodecamp.org/practice-project/accessibility-quiz" method="post">
+                <!-- As this is a quiz, you will need a form for users to submit answers.
+                You can semantically separate the content within the form using 'section' elements. -->
+                <!-- To increase the page accessibility, the 'role' attribute can be used to
+                indicate the purpose behind an element on the page to assitive technologies.
+                The 'role' attribute is a part of the Web Accessibility Initiative (WAI), and accepts presedt values. -->
+                <section role="region" aria-labelledby="student-info">
+                    <h2 id="student-info">Student Info</h2>
+                    <div class="info">
+                        <label for="student-name">Name:</label>
+                        <!-- Adding a placeholder to the input element i actually not a
+                        best-practice for accessibility; too often, users confuse the placeholder
+                        text with an actual input value - they think there is already a value in the input.
+                        Relying on the 'label' being the best-practice. -->
+                        <input type="text" name="student-name" id="student-name" />
+                    </div>
+                    <div class="info">
+                        <label for="student-email">Email:</label>
+                        <input type="email" name="student-email" id="student-email" />
+                    </div>
+                    <div class="info">
+                        <label for="birth-date">D.O.B.:<span class="sr-only">(Date of Birth)</span></label>
+                        <input type="date" name="birth-date" id="birth-date" />
+                    </div>
+                </section>
+                <section role="region" aria-labelledby="html-questions">
+                    <h2 id="html-questions">HTML</h2>
+                    <div class="question-block">
+                        <p>1</p>
+                        <fieldset class="question" name="html-question-one">
+                            <legend>The legend element represents a caption for the content of its parent fieldset element</legend>
+                            <ul class="answers-list">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                    <div class="question-block">
+                        <p>2</p>
+                        <fieldset class="question" name="html-question-two">
+                            <legend>A label element nesting an input element is required to have a for attribute with the same value as the input's id</legend>
+                            <ul class="answers-list">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                </section>
+                <section role="region" aria-labelledby="css-questions">
+                    <h2 id="css-questions">CSS</h2>
+                </section>
+            </form>
         </main>
     </body>
 </html>
